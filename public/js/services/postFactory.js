@@ -27,7 +27,7 @@ postFactory.removePost = function(post) {
 };
 
 postFactory.addComment = function(id, newComment) {
-    return $http.post('/posts/' + id + '/comments', newComment)
+    return $http.post('/posts/' + id + '/comments',{body:newComment})
       .then(function(response) {
         return response.data
       }, function(err) {

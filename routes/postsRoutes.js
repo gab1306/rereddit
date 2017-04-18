@@ -76,7 +76,7 @@ router.post('/:id/comments', ensureAuthenticated, function(req, res, next) {
        if (err) {
          return next(err);
        } else {
-         res.send(updatedPost);
+         res.json(updatedPost);
        }
      });
    }

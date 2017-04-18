@@ -6,6 +6,7 @@
     <span class="glyphicon glyphicon-thumbs-up" ng-click="upvote(post)"></span>
     <span class="glyphicon glyphicon-thumbs-down" style="color:red;" ng-click="downvote()"></span> {{comment.upvotes}} - by {{comment.author}}
     <span class="comment-body">{{comment.body}}</span>
+    <button ng-click="removeComment($index)">Delete Comment</button> 
 </div>
 <form ng-submit="addComment()">
     <h3>Add a new comment</h3>

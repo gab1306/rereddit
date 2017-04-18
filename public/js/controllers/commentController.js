@@ -1,11 +1,17 @@
 app.controller('CommentController', function($scope, $stateParams, postFactory) {
 
   $scope.addComment = function() {
-    postFactory.addComment($stateParams.id, $scope.newReview)
-    .then(function(post) {
-      $scope.post = post;
-    })
+    // console.log($scope.text);
+    postFactory.addComment($stateParams.id,$scope.body)
+      .then(function(newPost) {
+        $scope.post = newPost;
+      })
+      //this is new
+      .catch(function(err) {
+        alert(err.data)
+      });
   }
+
 
   $scope.upvote = function() {
     if(scope.vote.downValue === 1) {
@@ -44,6 +50,8 @@ app.controller('CommentController', function($scope, $stateParams, postFactory) 
 
 
 
-
+// // postFactory.getComments($stateParams.id).then(function(comments) {
+// //   $scope.post = comments;
+// })
 
 });
