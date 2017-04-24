@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var Post = require("../models/postModel");
+var Comment = require("../models/commentModel")
 var expressJWT = require('express-jwt');
 var ensureAuthenticated = expressJWT({ secret: 'thisIsTopSecret'});
 
@@ -41,8 +42,20 @@ router.get('/:id', function(req, res, next) {
  });
 });
 
+router.get('/:id/comments', ensureAuthenticated, function(req, res, next) {
+  Post.findById(req.params.id, function(error, post) {
+    if (error) {
+      console.error(error)
+      return next(error);
+    } else {
+      res.send(post);
+    }
+  });
+});
+
+
 router.put('/:id', ensureAuthenticated, function(req, res, next) {
- Post.findByIdAndUpdate(req.params.id, req.body, { new: true }, function(error, post) {
+ Post.findByIdAndUpdate(req.params.id,{$inc: {upvotes: req.body.vote}}, function(error, post) {
    if (error) {
      console.error(error)
      return next(error);
@@ -83,30 +96,47 @@ router.post('/:id/comments', ensureAuthenticated, function(req, res, next) {
  });
 });
 
-router.delete('/:postid/comments/:commentid', ensureAuthenticated, function(req, res, next) {
- Post.findById(req.params.beerid, function(err, foundPost) {
-   if (err) {
-     return next(err);
-   } else if (!foundPost) {
-     return res.send("Error! No post found with that ID");
-   } else {
-     var commentToDelete = foundPost.comments.id(req.params.postid)
-     if (commentToDelete) {
-       commentToDelete.remove()
-       foundPost.save(function(err, updatedPost) {
-         if (err) {
-           return next(err);
-         } else {
-           res.send(updatedPost);
-         }
-       });
-     } else {
-       return res.send("Error! No comment found with that ID");
-     }
-   }
- });
-});
+router.put('/:postid2/comments/:commentid', ensureAuthenticated, function(req,res,next){
+  console.log("server yay")
+  Post.findById(req.params.postid2, function(err, foundPost) {
+    console.log(foundPost);
+    for (var i=0; i< foundPost.comments.length; i++) {
+      if(foundPost.comments[i]._id === req.params.commentid) {
+        if (req.body.vote) {
+        foundPost.comments.upvotes++;
+      } else {
+        foundPost.comments.upvotes--;
+      }
+    }
+  }
+  foundPost.save();
+return res.send(foundPost);
+})
+})
 
+router.delete('/:postid/comments/:commentid', ensureAuthenticated, function(req, res, next) {
+  Post.findById(req.params.postid, function(err, foundPost) {
+    if (err) {
+      return next(err);
+    } else if (!foundPost) {
+      return res.send("Error! No post found with that ID");
+    } else {
+      var commentToDelete = foundPost.comments.id(req.params.commentid)
+      if (commentToDelete) {
+        commentToDelete.remove()
+        foundPost.save(function(err, updatedPost) {
+          if (err) {
+            return next(err);
+          } else {
+            res.send(updatedPost);
+          }
+        });
+      } else {
+        return res.send("Error! No comment found with that ID");
+      }
+    }
+  });
+});
 
 router.post('/', ensureAuthenticated, function(req, res, next) {
     console.log(req.body);

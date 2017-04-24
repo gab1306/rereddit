@@ -1,5 +1,5 @@
 //package and module requirements
-var express = require('express')
+var express = require('express');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var passport = require('./models/passport');
@@ -7,7 +7,7 @@ var postsRoutes = require('./routes/postsRoutes');
 var authRoutes = require('./routes/authRoutes');
 
 var app = express();
-mongoose.connect('mongodb://localhost/posts');
+mongoose.connect(process.env.CONNECTION_STRING||'mongodb://localhost/posts');
 
 app.use(passport.initialize());
 app.use(bodyParser.json());
@@ -23,6 +23,4 @@ app.all('*', function(req, res) {
 
 
 //start the server
-app.listen('8000', function() {
-  console.log("yo yo yo, on 8000 bro");
-});
+app.listen(process.env.PORT || '8080');

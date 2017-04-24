@@ -43,10 +43,9 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
 });
 
 
-app.run(function($rootScope,$http) {
+app.run(function($rootScope) {
   var user = JSON.parse(localStorage.getItem("user"));
   if (user) {
     $rootScope.currentUser = user.name;
-    $http.defaults.headers.common.Authorization = 'Bearer ' + user.token;
   }
 });

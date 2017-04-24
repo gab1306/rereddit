@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
-var comment = require('./commentModel');
+var Comment = require('./commentModel');
 
 
 var postSchema = new Schema ({
@@ -8,7 +8,7 @@ var postSchema = new Schema ({
   author: String,
   upvotes: Number,
   downvotes: Number,
-  comments: [comment]
+  comments: [Comment]
 });
 
 var post = mongoose.model("post", postSchema);

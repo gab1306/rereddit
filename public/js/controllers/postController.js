@@ -64,7 +64,7 @@ app.controller('PostController', function($scope, postFactory) {
             });
         }
         postFactory.getPosts().then(function(posts) {
-  $scope.posts = posts;
+        $scope.posts = posts;
      });
 
 });

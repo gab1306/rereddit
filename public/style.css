@@ -2,7 +2,7 @@
 .post-text {
     font-size: 30px;
     margin-left: 30px;
-    font-family: verdana;
+    font-family: 'Indie Flower', cursive;
     color:black;
 }
 
@@ -18,7 +18,9 @@ body{
 }
 
 .navbar-default{
-      background-color: darkblue;
+  background: -webkit-linear-gradient(left, blue, white);
+-webkit-fill-color: transparent;
+
 
 }
 
@@ -43,9 +45,13 @@ body{
 h1{
   font-size: 100px;
   font-family: 'Russo One', sans-serif;
-  color:darkblue;
   padding-bottom: 20px;
   margin: 9px;
+  color:blue;
+  /*background: -webkit-linear-gradient(left, blue, white);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;*/
+}
 }
 
 a{
@@ -61,14 +67,17 @@ a{
 }
 
 .n{
-  border: 5px solid white;
+  border-width: 3px;
+  border-style: solid;
+  border-color: blue;
   margin: 30px;
-  font-size: 25px;
-  color:darkblue;
+  font-size: 18px;
+
+
 }
 
 .glyphicon{
-  font-size: 53px;
+  font-size: 33px;
 }
 
 button{
@@ -76,12 +85,20 @@ button{
   font-family: 'Russo One', sans-serif;
 }
 
-h3{
+h4{
   font-size: 35px;
-  color: darkblue;
+
   font-family: 'Russo One', sans-serif;
+  background: -webkit-linear-gradient(left, blue, white);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
 }
 
 .u{
   margin:30px;
+}
+
+.glyphicon-thumbs-up:before {
+    content: "\e125";
+    color: blue;
 }
