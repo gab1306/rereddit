@@ -18,7 +18,7 @@ body{
 }
 
 .navbar-default{
-  background-color: black;
+
 
 
 }
@@ -40,18 +40,6 @@ body{
     font-size: 20px;
     font-family: verdana;
   }
-
-h1{
-  font-size: 100px;
-  font-family: 'Russo One', sans-serif;
-  padding-bottom: 20px;
-  margin: 9px;
-  color:black;
-  /*background: -webkit-linear-gradient(left, blue, white);
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;*/
-}
-}
 
 a{
   color: black;
