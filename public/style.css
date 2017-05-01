@@ -14,12 +14,11 @@
 body{
     padding-top: 20px;
     padding-bottom: 20px;
-    background-image: url(https://goodies.pcastuces.com/vignettes/8233_l.jpg);
+    background-image: url(https://www.walldevil.com/wallpapers/a74/reddit-wallpaper-images.jpg);
 }
 
 .navbar-default{
-  background: -webkit-linear-gradient(left, blue, white);
--webkit-fill-color: transparent;
+  background-color: black;
 
 
 }
@@ -69,7 +68,7 @@ a{
 .n{
   border-width: 3px;
   border-style: solid;
-  border-color: blue;
+  border-color: black;
   margin: 30px;
   font-size: 18px;
 
