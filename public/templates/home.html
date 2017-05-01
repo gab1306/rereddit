@@ -4,8 +4,8 @@
     {{post.upvotes}}
     <span class="post-text">
       {{post.text}}
-    </span> - <span style="color:black;"> by </span> <span style="color:black;">  {{post.author}} </span>
-    <a ui-sref="comment({id: post._id})"><span style="color:white; decoration:none;"> comments </span></a>
+    </span> - <span style="color:blue;"> by </span> <span style="color:blue;">  {{post.author}} </span>
+    <a ui-sref="comment({id: post._id})"><span style="color:black; decoration:none;"> comments </span></a>
     <button ng-click="removePost()">Delete Post</button>
 </div>
 <form ng-submit="addPost()">

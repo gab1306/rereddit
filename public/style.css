@@ -3,7 +3,7 @@
     font-size: 30px;
     margin-left: 30px;
     font-family: 'Indie Flower', cursive;
-    color:black;
+    color:white;
 }
 
 .glyphicon-thumbs-down,
@@ -14,7 +14,7 @@
 body{
     padding-top: 20px;
     padding-bottom: 20px;
-    background-image: url(https://www.walldevil.com/wallpapers/a74/reddit-wallpaper-images.jpg);
+    background-image: url(https://novinessmb.com/wp-content/uploads/2017/04/vs.jpg);
 }
 
 .navbar-default{
@@ -97,5 +97,5 @@ h4{
 
 .glyphicon-thumbs-up:before {
     content: "\e125";
-    color: black;
+    color: blue;
 }
