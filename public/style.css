@@ -3,7 +3,7 @@
     font-size: 30px;
     margin-left: 30px;
     font-family: 'Indie Flower', cursive;
-    color:darkolivegreen;
+    color:teal;
 }
 
 .glyphicon-thumbs-down,
@@ -19,8 +19,8 @@ body{
 
 .navbar-default{
 
-  background-color: darkolivegreen;
-  border-color: #e7e7e7;
+  background-color: teal;
+  border-color: teal;
 
 }
 
@@ -57,7 +57,7 @@ a{
 .n{
   border-width: 3px;
   border-style: solid;
-  border-color: darkolivegreen;
+  border-color: teal;
   margin: 30px;
   font-size: 18px;
 
@@ -75,7 +75,7 @@ button{
 
 h4{
   font-size: 35px;
-  color:darkolivegreen;
+  color:teal;
   font-family: 'Russo One', sans-serif;
 
 }
