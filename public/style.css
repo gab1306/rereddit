@@ -88,3 +88,8 @@ h4{
     content: "\e125";
     color: blue;
 }
+
+.btn-primary {
+    color: #fff;
+    background-color: teal;
+    border-color: teal;
