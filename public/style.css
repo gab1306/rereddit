@@ -124,13 +124,13 @@ h4 {
   line-height: 1;
 }*/
 
-/*button {
-  text-decoration: none;
+a {
+  /*text-decoration: none;*/
   line-height: 30px;
   text-align: center;
   font-family: verdana;
 
-}*/
+}
 
 /*.centerer {
   width: 100%;
