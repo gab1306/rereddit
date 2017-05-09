@@ -159,7 +159,9 @@ a {
 
 
 .btn-2 {
+  cursor: pointer;
   color: teal;
+
 }
 .btn-2:before {
   content: '';
